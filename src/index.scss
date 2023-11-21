@@ -1,0 +1,30 @@
+$primary: #007bff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #503d04; // renk degistirdik
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
+$border-radius: 30px; // degistirdik
+
+//YUKARIDA BOOTSTRAP OZELLERINI DEGISTIRDIK
+
+@import "bootstrap/scss/bootstrap";  //@use "bootstrap/scss/bootstrap"; bu sadace gerekli olanlari alir o yuzden bazi seyler icin extra import lazim
+body{
+    background-color: slategray;
+    margin: 0;
+    padding: 0;
+    button{
+        background-color: cornflowerblue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: rgb(72, 72, 141);
+        }
+    }
+}
