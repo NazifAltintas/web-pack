@@ -2,7 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: {
+    main: "./src/index.js",
+    vendor: "./src/vendor.js",
+  },
   module: {
     rules: [
       {//css
@@ -16,6 +19,10 @@ module.exports = {
       {//sass
         test: /\.s[ac]ss$/i, //(a|c) de olur. i=ignore case sensitive
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {//html
+        test: /\.html$/i,
+        loader: "html-loader",
       },
     ],
   },

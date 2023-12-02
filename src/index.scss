@@ -2,7 +2,7 @@ $primary: #007bff;
 $secondary: #6c757d;
 $success: #28a745;
 $info: #17a2b8;
-$warning: #503d04; // renk degistirdik
+$warning: #6d966f; // renk degistirdik
 $danger: #dc3545;
 $light: #f8f9fa;
 $dark: #343a40;
@@ -13,11 +13,11 @@ $border-radius: 30px; // degistirdik
 
 @import "bootstrap/scss/bootstrap";  //@use "bootstrap/scss/bootstrap"; bu sadace gerekli olanlari alir o yuzden bazi seyler icin extra import lazim
 body{
-    background-color: slategray;
+    background-color: rgb(92, 117, 143);
     margin: 0;
     padding: 0;
     button{
-        background-color: cornflowerblue;
+        background-color: rgb(13, 43, 96);
         color: white;
         border: none;
         padding: 10px 20px;
