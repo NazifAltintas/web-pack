@@ -1,4 +1,4 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
@@ -11,6 +11,23 @@ const prod = {
     clean: true,
     assetModuleFilename: "images/[hash][ext][query]",
   },
+  module: {
+    rules: [
+      { //css
+        test: /\.css$/i,
+        use: [ MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {//sass
+        test: /\.s[ac]ss$/i, //(a|c) de olur. i=ignore case sensitive
+        use: [ MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+    ],
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "./css/[name].[contenthash].css",
+    }),
+  ],
 };
 
 module.exports = merge(common, prod);
