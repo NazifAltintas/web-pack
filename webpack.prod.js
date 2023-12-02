@@ -13,13 +13,28 @@ const prod = {
   },
   module: {
     rules: [
-      { //css
+      {
+        //css
         test: /\.css$/i,
-        use: [ MiniCssExtractPlugin.loader, "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
-      {//sass
+      {
+        //sass
         test: /\.s[ac]ss$/i, //(a|c) de olur. i=ignore case sensitive
-        use: [ MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(?:js|mjs|cjs)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env"]],
+            
+         
+
+          },
+        },
       },
     ],
   },
